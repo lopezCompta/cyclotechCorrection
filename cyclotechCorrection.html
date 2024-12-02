@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correction - Atelier CycloTech</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #27ae60;
+        }
+        h1 {
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #27ae60;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .calculation {
+            background-color: #e8f6e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .mermaid{
+            text-align: center;
+        }
+    </style>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+</head>
+<body>
+    <h1>Correction - Calcul du Coût de Revient Complet</h1>
+
+    <h2>1. Charges à Incorporer</h2>
+    <p>Les charges à incorporer sont :</p>
+    <ul>
+        <p>toutes les charges, sauf les charges exceptionnelles</p>
+    </ul>
+
+    <h2>2. Charges Non Incorporables</h2>
+    <p>Les charges non incorporables sont :</p>
+    <ul>
+        <li>Charges exceptionnelles sur opérations de gestion : 30 000 €</li>
+    </ul>
+
+    <h2>3. Charges Supplétives</h2>
+    <p>Les charges supplétives incluent la rémunération des capitaux propres :</p>
+    <ul>
+        <li>Capital investi : 750 000 €</li>
+        <li>Rémunération des capitaux : 5% × 750 000 = 37 500 €</li>
+    </ul>
+
+    <h2>4.1 Total charges incorporables</h2>
+    <p>Le total est égal aux charges incorporables et supplétives, soit 3 007 500€</p>
+
+    <h2>4.2 Répartition Primaire des Charges</h2>
+    <table>
+        <tr>
+            <th>Centre d'analyse</th>
+            <th>Montant (en €)</th>
+        </tr>
+        <tr>
+            <td>Service Entretien</td>
+            <td>100 000</td>
+        </tr>
+        <tr>
+            <td>Approvisionnement</td>
+            <td>290 750</td>
+        </tr>
+        <tr>
+            <td>Assemblage cadre</td>
+            <td>726 875</td>
+        </tr>
+        <tr>
+            <td>Montage roues</td>
+            <td>436 125</td>
+        </tr>
+        <tr>
+            <td>Montage composants</td>
+            <td>581 500</td>
+        </tr>
+        <tr>
+            <td>Contrôle qualité</td>
+            <td>290 750</td>
+        </tr>
+        <tr>
+            <td>Marketing</td>
+            <td>290 750</td>
+        </tr>
+        <tr>
+            <td>Administration</td>
+            <td>290 750</td>
+        </tr>
+    </table>
+
+    <h2>5. Répartition Secondaire du Service Entretien</h2>
+    <p>Les charges du Service Entretien sont réparties selon la surface occupée :</p>
+    <table>
+        <tr>
+            <th>Centre d'analyse</th>
+            <th>Surface (m²)</th>
+            <th>Proportion</th>
+            <th>Montant (en €)</th>
+        </tr>
+        <tr>
+            <td>Approvisionnement</td>
+            <td>300</td>
+            <td>300/2500 = 12%</td>
+            <td>12 000</td>
+        </tr>
+        <tr>
+            <td>Assemblage cadre</td>
+            <td>600</td>
+            <td>600/2500 = 24%</td>
+            <td>24 000</td>
+        </tr>
+        <tr>
+            <td>Montage roues</td>
+            <td>500</td>
+            <td>500/2500 = 20%</td>
+            <td>20 000</td>
+        </tr>
+        <tr>
+            <td>Montage composants</td>
+            <td>400</td>
+            <td>400/2500 = 16%</td>
+            <td>16 000</td>
+        </tr>
+        <tr>
+            <td>Contrôle qualité</td>
+            <td>300</td>
+            <td>300/2500 = 12%</td>
+            <td>12 000</td>
+        </tr>
+        <tr>
+            <td>Marketing</td>
+            <td>200</td>
+            <td>200/2500 = 8%</td>
+            <td>8 000</td>
+        </tr>
+        <tr>
+            <td>Administration</td>
+            <td>200</td>
+            <td>200/2500 = 8%</td>
+            <td>8 000</td>
+        </tr>
+    </table>
+
+    <h2>6. Charges Totales Après Répartition Secondaire</h2>
+    <table>
+        <tr>
+            <th>Centre d'analyse</th>
+            <th>Charges Totales (en €)</th>
+        </tr>
+        <tr>
+            <td>Approvisionnement</td>
+            <td>302 750</td>
+        </tr>
+        <tr>
+            <td>Assemblage cadre</td>
+            <td>750 875</td>
+        </tr>
+        <tr>
+            <td>Montage roues</td>
+            <td>456 125</td>
+        </tr>
+        <tr>
+            <td>Montage composants</td>
+            <td>597 500</td>
+        </tr>
+        <tr>
+            <td>Contrôle qualité</td>
+            <td>302 750</td>
+        </tr>
+        <tr>
+            <td>Marketing</td>
+            <td>298 750</td>
+        </tr>
+        <tr>
+            <td>Administration</td>
+            <td>298 750</td>
+        </tr>
+    </table>
+
+    
+    <h2>7. Calcul des Coûts de Revient</h2>
+
+    <h3>7.1 Calcul des Coûts des Unités d'Œuvre</h3>
+    <p>Les coûts unitaires sont calculés en fonction des unités d'œuvre pour chaque centre d'analyse.</p>
+    <table>
+        <tr>
+            <th>Centre d'analyse</th>
+            <th>Unité d'œuvre</th>
+            <th>Montant total des charges (en €)</th>
+            <th>Nombre d'unités d'œuvre</th>
+            <th>Coût unitaire (en €)</th>
+        </tr>
+        <tr>
+            <td>Approvisionnement</td>
+            <td>Nombre de commandes</td>
+            <td>302 750</td>
+            <td>1 000</td>
+            <td>302,75€</td>
+        </tr>
+        <tr>
+            <td>Assemblage cadre</td>
+            <td>Heures de MOD</td>
+            <td>750 875</td>
+            <td>35 000</td>
+            <td>21,54€</td>
+        </tr>
+        <tr>
+            <td>Montage roues</td>
+            <td>Nombre de roues</td>
+            <td>456 125</td>
+            <td>30 000</td>
+            <td>5.67</td>
+        </tr>
+        <tr>
+            <td>Montage composants</td>
+            <td>Heures de MOD</td>
+            <td>597 500</td>
+            <td>25 000</td>
+            <td>23,88€</td>
+        </tr>
+        <tr>
+            <td>Contrôle qualité</td>
+            <td>Nombre de vélos</td>
+            <td>302 750</td>
+            <td>15 000</td>
+            <td>20,18€</td>
+        </tr>
+        <tr>
+            <td>Marketing</td>
+            <td>% du CA</td>
+            <td>298 750</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Administration</td>
+            <td>% du CA</td>
+            <td>298 750</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+
+    <h3>7.2 Calcul du Coût d'Acquisition des Matières Premières avec les CUMP</h3>
+    <p>Le coût d'acquisition des matières premières est calculé en fonction du CUMP (Coût Unitaire Moyen Pondéré).</p>
+    <p>Après la première entrée d'achat (10 000 unités pour 1 900 000 €), le CUMP est calculé comme suit :</p>
+    <ul>
+        <li><strong>Stock initial :</strong> 2 500 unités à 180 € chacune (500 000 €)</li>
+        <li><strong>Achat supplémentaire :</strong> 10 000 unités pour 1 900 000 €</li>
+        <li><strong>CUMP après achat :</strong> <br>
+            (Stock initial + Achat) / (Stock initial + Achat) <br>
+            = (500 000 € + 1 900 000 €) / (2 500 + 10 000) <br>
+            = 2 400 000 € / 12 500 unités = 192 €
+        </li>
+    </ul>
+    <p>Le CUMP des matières premières est donc de 192 € par unité.</p>
+    <p>Il faut ajouter à cela les charges directes et on obtient :</p>
+    <p>Coût d'acquisition = Charges directes d'achats + charges directes d'achats</p>
+    <p>Les charges directes sont de 302,75€ par commande et nous avons 1000 commandes pour 15 000 unités, soit 302,75*1000/15000 = 20,18€ par unité </p>
+    <p>Coût d'acquisition = 192 + 20,18 = 212,18€</p>
+
+    <h3>7.3 Coûts de Distribution et d'Administration</h3>
+    
+    <p>Les coûts de distribution (marketing) et d'administration doivent être répartis en fonction du chiffre d'affaires des différents types de vélos. Le total des ventes est utilisé pour calculer la répartition de ces charges.</p>
+
+    <p><strong>Chiffre d'Affaires Total :</strong></p>
+    <ul>
+        <li>Vélo de ville : 10 000 x 650 € = 6 500 000 €</li>
+        <li>VTT : 15 000 x 950 € = 14 250 000 €</li>
+        <li>Chiffre d'affaires total : 6 500 000 € + 14 250 000 € = 20 750 000 €</li>
+    </ul>
+
+    <p><strong>Répartition des Charges Marketing :</strong></p>
+    <ul>
+        <li>Part des vélos de ville : (6 500 000 / 20 750 000) x 298 750 € = 93 854,34€</li>
+        <li>charges indirectes unitaires : 93 854,34/10 000 = 9,39€</li>
+        <li>Part des VTT : (14 250 000 / 20 750 000) x 298 750 € = 219 563,25 €</li>
+        <li>charges indirectes unitaires : 93 854,34/10 000 = 43,91€</li>
+
+    </ul>
+
+    <p><strong>Répartition des Charges Administratives :</strong></p>
+    <p>Même chose : vélo de ville = 9,39€ & VTT = 43,91€</p>
+
+   
+    
+    <h4>7.4 Coût de Production</h4>
+    <p>Le coût de production se compose du cout d'acquisition et des charges directes et indirectes de productions</p>
+    <p>Cout d'acquisition = 212,18 pour n'importe quel vélo</p>
+    <p>charges directes de production : heures MOD * cout MOD</p>
+    <p>Vélo de ville : 2*25 = 50€</p>
+    <p>VTT : 3*25 = 75€</p>
+    <p>charges indirectes de production : Cout d'unités d'oeuvres * nbr d'unités d'oeuvres</p>
+    <h3>Assemblage Cadre</h3>
+<table border="1">
+    <tr>
+        <th>Type de Vélo</th>
+        <th>Temps d'Assemblage</th>
+        <th>Coût d'UO (€/h)</th>
+        <th>Charges Indirectes (CI, €)</th>
+    </tr>
+    <tr>
+        <td>Vélo de ville</td>
+        <td>20 min</td>
+        <td>21,54 €</td>
+        <td>7,18 €</td>
+    </tr>
+    <tr>
+        <td>VTT</td>
+        <td>40 min</td>
+        <td>21,54 €</td>
+        <td>14,36 €</td>
+    </tr>
+</table>
+<h3>Montage Roues</h3>
+<table border="1">
+    <tr>
+        <th>Coût de l'unité d'œuvre (€)</th>
+        <th>Nombre d'unités d'œuvre</th>
+        <th>Charges Directes (€)</th>
+    </tr>
+    <tr>
+        <td>5,67</td>
+        <td>2</td>
+        <td>11,34€</td>
+    </tr>
+</table>
+
+<h3>Montage des Composants</h3>
+<table border="1">
+    <tr>
+        <th>Type de Vélo</th>
+        <th>Coût de l'unité d'œuvre (€/h)</th>
+        <th>Temps requis</th>
+        <th>Nombre d'unités d'œuvre</th>
+        <th>Coût total (€)</th>
+    </tr>
+    <tr>
+        <td>Vélo de ville</td>
+        <td>23,88 €</td>
+        <td>40 min</td>
+        <td>2/3</td>
+        <td>15,92 €</td>
+    </tr>
+    <tr>
+        <td>VTT</td>
+        <td>23,88 €</td>
+        <td>1 h 20 min</td>
+        <td>4/3</td>
+        <td>31,84 €</td>
+    </tr>
+</table>
+
+<h3>Contrôle Qualité</h3>
+<table border="1">
+    <tr>
+        <th>Coût de l'unité d'œuvre (€/h)</th>
+        <th>Nombre d'unités d'œuvre</th>
+        <th>Charges Indirectes (€)</th>
+    </tr>
+    <tr>
+        <td>20,18 €</td>
+        <td>1</td>
+        <td>20,18 €</td>
+    </tr>
+</table>
+
+<p>Cout de production Vélo de ville = 212,18 + 50 + 7,18 + 11,34 + 15,92 + 20,18 = 316,80€</p>
+<p>Cout de production VTT = 212,18 + 75 + 14,36 + 11,34 + 31,84 + 20,18 = 364,90€</p>
+
+
+
+
+    <h3>Coût de Revient Complet pour un Vélo de Ville :</h3>
+    <p><strong>Coût de revient complet :</strong></p>
+    <p>
+        Coût de revient complet = Coût de production + Coût de distribution + Coût administratif <br>
+        Coût de revient complet = 316,80 + 9,39 + 9,39 = 335,58€
+    </p>
+    <h3>Coût de Revient Complet pour un VTT :</h3>
+    <p><strong>Coût de revient complet :</strong></p>
+    <p>
+        Coût de revient complet = Coût de production + Coût de distribution + Coût administratif <br>
+        Coût de revient complet = 364,90 + 43,91 + 43,91 = 452,72€
+    </p>
+
+  
+    <h2>Conclusion sur la Concurrence</h2>
+    
+<p>En comparant ces coûts de revient avec les prix de vente du concurrent :</p>
+<ul>
+    <li>Vélo de ville : 335,58 €</li>
+    <li>VTT : 452,72 €</li>
+</ul>
+
+<h3>8.0 Analyse des marges de Cyclotech si elle s'aligne sur les prix concurrentiels</h3>
+    <p>
+        Voici le détail des marges exprimées en pourcentage si Cyclotech s'aligne sur les prix du concurrent :
+    </p>
+    <h2>Vélo de ville</h2>
+    <ul>
+        <li><strong>Prix de vente concurrentiel :</strong> 550 €</li>
+        <li><strong>Coût de revient :</strong> 335,58 €</li>
+        <li><strong>Marge brute :</strong> 550 € - 335,58 € = 214,42 €</li>
+        <li><strong>Marge en pourcentage :</strong> (214,42 / 550) * 100 = 38,98 %</li>
+    </ul>
+    <h2>VTT</h2>
+    <ul>
+        <li><strong>Prix de vente concurrentiel :</strong> 850 €</li>
+        <li><strong>Coût de revient :</strong> 452,72 €</li>
+        <li><strong>Marge brute :</strong> 850 € - 452,72 € = 397,28 €</li>
+        <li><strong>Marge en pourcentage :</strong> (397,28 / 850) × 100 = 46,74 %</li>
+    </ul>
+    <h2>Comparaison avec les marges actuelles</h2>
+    <ul>
+        <li><strong>Marge actuelle Vélo de ville :</strong> (314,42 / 650) × 100 = 48,37 %</li>
+        <li><strong>Marge actuelle VTT :</strong> (497,28 / 950) × 100 = 52,34 %</li>
+    </ul>
+    <p>
+        En s'alignant sur les prix concurrentiels, Cyclotech verrait donc une diminution des marges mais ses marges restent largement acceptable et Cyclotech peut donc s'aligner :
+    </p>
+    <ul>
+        <li><strong>Vélo de ville :</strong> 48,37 % → 38,98 %</li>
+        <li><strong>VTT :</strong> 52,34 % → 46,74 %</li>
+    </ul>
+</body>
+
+</html>
